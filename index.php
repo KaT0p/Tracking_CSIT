@@ -126,12 +126,12 @@ if (!isset($_SESSION["aid"])) {
                                                 <div class="card">
                                                         <div class="card-body">
                                                                 <div class="row">
-                                                                        <h1 class="h3 mb-3"><strong> เพิ่ม</strong>รายชื่อนิสิต</h1>
+                                                                        <h1 class="h3 mb-3"><strong> เพิ่ม</strong> รายชื่อนิสิต</h1>
                                                                         <div class="row">
                                                                                 <div class="col-12 col-lg-8 col-xxl-9 d-flex">
                                                                                         <h5><a href="adds.php" class="btn btn-warning mb-4 mt-2"> <i class="align-middle me-2" data-feather="user-plus"></i> <span class="align-middle">เพิ่มรายชื่อนิสิต</a></h5>
                                                                                 </div>
-                                                                                <h1 class="h3 mb-3"><strong> เพิ่ม</strong>รายชื่ออาจารย์</h1>
+                                                                                <h1 class="h3 mb-3"><strong> เพิ่ม</strong> รายชื่ออาจารย์</h1>
                                                                                 <div class="row">
                                                                                         <div class="col-12 col-lg-8 col-xxl-9 d-flex">
                                                                                                 <h5><a href="addT.php" class="btn btn-danger mb-4 mt-2"> <i class="align-middle me-2" data-feather="user-plus"></i> <span class="align-">เพิ่มรายชื่ออาจารย์</a></h5>

@@ -139,7 +139,7 @@ $row = mysqli_fetch_array($result);
                 <th>ความก้าวหน้า</th>
                 <th>สถานะ</th>
                 <th>วันที่อัพโหลด</th>
-                <th>ผู้ลงบันทึก</th>
+                <th></th>
             </tr>
             </thead>
             <tr>

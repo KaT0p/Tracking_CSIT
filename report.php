@@ -1,4 +1,4 @@
-<!-- หน้าดูรายชื่อ นิสิต ทั้งหมดที่มีในระบบ Admin -->
+<!-- หน้าสรุป Admin -->
 
 <?php include 'config/db.php';
 
@@ -7,6 +7,7 @@ session_start();
 if (!isset($_SESSION["aid"])) {
     header('Location: login.php');
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -41,8 +42,8 @@ if (!isset($_SESSION["aid"])) {
 
 <body>
     <div class="wrapper">
-        <nav id="sidebar" class="sidebar js-sidebar">
-            <div class="sidebar-content js-simplebar">
+        <!-- <nav id="sidebar" class="sidebar js-sidebar">
+            <div class="sidebar-content js-si   mplebar">
                 <a class="sidebar-brand" href="index.php">
                     <span class="align-middle">Admin</span>
                 </a>
@@ -68,7 +69,7 @@ if (!isset($_SESSION["aid"])) {
                         <a class="sidebar-link" href="show_student.php">
                             <i class="align-middle" data-feather="book-open"></i> <span class="align-middle">แสดงรายชื่อนิสิต</span>
                         </a>
-                    </li>            
+                    </li>
                     <li class="sidebar-header">
                         สำหรับอาจารย์
                     </li>
@@ -101,7 +102,7 @@ if (!isset($_SESSION["aid"])) {
                     </div>
                 </div>
             </div>
-        </nav>
+        </nav> -->
 
         <div class="main">
             <nav class="navbar navbar-expand navbar-light navbar-bg">
@@ -129,60 +130,118 @@ if (!isset($_SESSION["aid"])) {
                         <div class="card">
                             <div class="card-body">
                                 <div class="row">
-                                    <h1 class="h3 mb-3"><strong>แสดง</strong> ข้อมูลนิสิต</h1>
-                                    <div class="row">
-                                    
-                                        <div class="col-12 col-lg-8 col-xxl-9 d-flex">
-                                            <h5><a href="adds.php" class="btn btn-primary mb-4 mt-2"> <i class="align-middle me-2" data-feather="user-plus"></i> <span class="align-middle">เพิ่มรายชื่อนิสิต</a></h5> <br>
-             <!-- กำลังแก้หน้า Report        <h5><a href="report.php" class="btn btn-success mb-4 mt-2 "><span class="align-right">📑สรุปผล</a></h5> -->
-                                        </div>
-
-                                        <h2><a href="report.php" class="btn btn-success"><span class="align-right">📑สรุปผล</a></h2>
-                                                                      
-                                        <form action="show_student.php" class="form-inline" method="GET">
-                                            <label for="">ค้นหานิสิต</label>
-                                            <input type="text" placeholder="ป้อนชื่อนิสิต" name="search" class="form-control mr-sm-">
+                                    <h1 class="h3 mb-3"><strong>สรุป ข้อมูลนิสิต</strong></h1>
+                                    <div class="row">    
+                                    <h2><a href="show_student.php" class="btn btn-danger" ><span class="align-right"> กลับ</a></h2>                                    
+                                        <form action="report.php" class="form-inline" method="GET">
+                                            <label for="">ค้นหานิสิต & สาขา</label>
+                                            <input type="text" placeholder="ป้อนชื่อนิสิตหรือสาขา" name="search" class="form-control mr-sm-">
                                             <input type="submit" value="ค้นหา" class="btn btn-outline-success my-2 my-sm-8">
                                         </form>
-                                        
-                                        <table class="table table-hover my-0">                                        
-                                            <thead>                                            
-                                                <tr>                                                
+
+                                        <table class="table table-hover my-0">
+                                            <thead>
+                                                <tr>
                                                     <th>รหัสนิสิต</th>
-                                                    <th class="d-none d-xl-table-cell">คำนำหน้า</th>
+                                                    <!-- <th class="d-none d-xl-table-cell">คำนำหน้า</th> -->
                                                     <th class="d-none d-md-table-cell">ชื่อ</th>
                                                     <th class="d-none d-md-table-cell">นามสกุล</th>
                                                     <!-- <th class="d-none d-md-table-cell">อีเมล</th> -->
                                                     <th class="d-none d-md-table-cell">สาขา</th>
-                                                    <!-- <th>GT01-02</th> -->
-                                                    <th class="d-none d-md-table-cell">ความก้าวหน้า</th>
-                                                    <th class="d-none d-md-table-cell">ดูข้อมูล</th>
-                                                    <th>แก้ไข</th>
-                                                    <th>ลบ</th>
+                                                    <th>GT-CSIT01</th>
+                                                    <th class="d-none d-md-table-cell">GT-CSIT02</th>
+                                                    <th class="d-none d-md-table-cell">GT-CSIT03</th>
+                                                    <th class="d-none d-md-table-cell">คะแนน Eng</th>
+                                                    <th class="d-none d-md-table-cell">สอบ QE</th>
+                                                    <th>แต่งตั้งที่ปรึกษา</th>
+                                                    <th>สอบโครงร่าง</th>
+                                                    <th>สอบจบ</th>
                                                 </tr>
                                             </thead>
                                             <?php
-                                            $sql = "SELECT * FROM student";
+                                            $sql = "SELECT * FROM `student` 
+                                            LEFT JOIN gtcsit ON gt_student_id = `student_id`
+                                            LEFT JOIN progress ON pg_student_id = `student_id`";
                                             if (isset($_GET['search'])) {
                                                 $sql .= " WHERE first_name LIKE '%" . $_GET['search'] . "%' or student_id LIKE '%" . $_GET['search'] . "%'
                                                                                       or section LIKE '%" . $_GET['search'] . "%'";
-                                            }
+                                            }                                    
+                                              
+                                                
+                                            
                                             $result = mysqli_query($conn, $sql);
                                             while ($row = mysqli_fetch_array($result)) {
+                                               
                                             ?>
                                                 <tr>
-                                                    
                                                     <td><?= $row["student_id"] ?></td>
-                                                    <td><?= $row["prefix"] ?></td>
-                                                    <td><?= $row["first_name"] ?></td>
-                                                    <td><?= $row["last_name"] ?></td>
+                                                    <!-- <td><?= $row["prefix"] ?></td> -->
+                                                    <td width = "10%"><?= $row["first_name"] ?></td>
+                                                    <td width = "10%"><?= $row["last_name"] ?></td>
                                                     <!-- <td><?= $row["email"] ?></td> -->
                                                     <td><?= $row["section"] ?></td>
-                                                    <!-- <td><a href="gt01-02.php?student_id=<?= $row["student_id"] ?>" class="btn btn-success"> GT01-02 </a></td> -->
-                                                    <td><a href="gt01-02.php?student_id=<?= $row["student_id"] ?>" class="btn btn-info"> ความก้าวหน้า </a></td>
+
+                                                    <td><?php
+                                                        if (empty($row["gt_file_01"])) {
+                                                            echo "❌";
+                                                        } else {
+                                                            echo "✔";
+                                                        } ?></td>
+
+                                                    <td><?php
+                                                        if (empty($row["gt_file_02"])) {
+                                                            echo "❌";
+                                                        } else {
+                                                            echo "✔";
+                                                        } ?></td>
+
+                                                    <td><?php
+                                                        if (empty($row["gt_file_03"])) {
+                                                            echo "❌";
+                                                        } else {
+                                                            echo "✔";
+                                                        } ?></td>
+
+                                                    <td><?php
+                                                        if (empty($row["pg_file_eng"])) {
+                                                            echo "❌";
+                                                        } else {
+                                                            echo "✔";
+                                                        } ?></td>
+
+                                                    <td><?php
+                                                        if (empty($row["pg_file_qe"])) {
+                                                            echo "❌";
+                                                        } else {
+                                                            echo "✔";
+                                                        } ?></td>
+
+                                                    <td><?php
+                                                        if (empty($row["pg_file_adviser"])) {
+                                                            echo "❌";
+                                                        } else {
+                                                            echo "✔";
+                                                        } ?></td>
+
+                                                    <td><?php
+                                                        if (empty($row["pg_file_outline"])) {
+                                                            echo "❌";
+                                                        } else {
+                                                            echo "✔";
+                                                        } ?></td>
+
+                                                    <td><?php
+                                                        if (empty($row["pg_file_end"])) {
+                                                            echo "❌";
+                                                        } else {
+                                                            echo "✔";
+                                                        } ?></td>
+
+                                                    <!-- <td><a href="gt01-02.php?student_id=<?= $row["student_id"] ?>" class="btn btn-success"> GT01-02 </a></td>
+                                                    <td><a href="progress_pg.php?student_id=<?= $row["student_id"] ?>" class="btn btn-info"> ความก้าวหน้า </a></td>
                                                     <td><a href="shows.php?student_id=<?= $row["student_id"] ?>" class="btn btn-primary"> ดูข้อมูล </a></td>
                                                     <td><a href="edits.php?student_id=<?= $row["student_id"] ?>" class="btn btn-warning"> ✏แก้ไข </a></td>
-                                                    <td><a href="delete_studen.php?student_id=<?= $row["student_id"] ?>" class="btn btn-danger" onclick="Del(this.href);return false;"> ลบ </a></td>
+                                                    <td><a href="delete_studen.php?student_id=<?= $row["student_id"] ?>" class="btn btn-danger" onclick="Del(this.href);return false;"> ลบ </a></td> -->
                                                 </tr>
                                             <?php
                                             }

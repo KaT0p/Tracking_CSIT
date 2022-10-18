@@ -155,8 +155,8 @@ if(!isset($_SESSION["aid"])) {
         <label>สาขา :</label> 
         <select class="form-select" name="section" aria-label="Default select example" required >
             <option selected>- เลือกสาขา -</option>
-            <option value="Computer_Science">วิทยาการคอมพิวเตอร์</option>
-            <option value="Information_Technology">เทคโนโลยีสารสนเทศ</option>
+            <option value="วิทยาการคอมพิวเตอร์">วิทยาการคอมพิวเตอร์</option>
+            <option value="เทคโนโลยีสารสนเทศ">เทคโนโลยีสารสนเทศ</option>
         </select> <br>
 
             <label>เพิ่มรูปนิสิต :</label>

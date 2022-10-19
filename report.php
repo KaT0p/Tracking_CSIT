@@ -144,15 +144,15 @@ if (!isset($_SESSION["aid"])) {
                                                 <tr>
                                                     <th>รหัสนิสิต</th>
                                                     <!-- <th class="d-none d-xl-table-cell">คำนำหน้า</th> -->
-                                                    <th class="d-none d-md-table-cell">ชื่อ</th>
-                                                    <th class="d-none d-md-table-cell">นามสกุล</th>
+                                                    <th>ชื่อ</th>
+                                                    <th>นามสกุล</th>
                                                     <!-- <th class="d-none d-md-table-cell">อีเมล</th> -->
-                                                    <th class="d-none d-md-table-cell">สาขา</th>
+                                                    <th>สาขา</th>
                                                     <th>GT-CSIT01</th>
-                                                    <th class="d-none d-md-table-cell">GT-CSIT02</th>
-                                                    <th class="d-none d-md-table-cell">GT-CSIT03</th>
-                                                    <th class="d-none d-md-table-cell">คะแนน Eng</th>
-                                                    <th class="d-none d-md-table-cell">สอบ QE</th>
+                                                    <th>GT-CSIT02</th>
+                                                    <th>GT-CSIT03</th>
+                                                    <th>คะแนน Eng</th>
+                                                    <th>สอบ QE</th>
                                                     <th>แต่งตั้งที่ปรึกษา</th>
                                                     <th>สอบโครงร่าง</th>
                                                     <th>สอบจบ</th>

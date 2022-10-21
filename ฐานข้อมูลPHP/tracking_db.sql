@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 07, 2022 at 04:36 PM
+-- Generation Time: Oct 21, 2022 at 12:33 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.2
 
@@ -93,7 +93,17 @@ CREATE TABLE `gtcsit` (
 --
 
 INSERT INTO `gtcsit` (`gt_id`, `gt_file_01`, `gt_file_02`, `gt_file_03`, `gt_file_01_timestamp`, `gt_file_02_timestamp`, `gt_file_03_timestamp`, `gt_file_01_admin_id`, `gt_file_02_admin_id`, `gt_file_03_admin_id`, `gt_student_id`) VALUES
-(28, 'uploads/TesT_CSIT01__071022041421.pdf', NULL, NULL, '2022-10-07 14:14:21', NULL, NULL, 1, NULL, NULL, 62313870);
+(28, 'uploads/TesT_CSIT01__071022041421.pdf', NULL, NULL, '2022-10-07 14:14:21', NULL, NULL, 1, NULL, NULL, 62313870),
+(29, NULL, NULL, 'uploads/TesT_CSIT03__181022121013.pdf', NULL, NULL, '2022-10-18 10:10:13', NULL, NULL, 1, 62314693),
+(30, NULL, 'uploads/TesT_CSIT02__171022050332.pdf', NULL, NULL, '2022-10-17 15:03:32', NULL, NULL, 1, NULL, 62313871),
+(31, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 62311371),
+(32, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 62314921),
+(33, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 62316062),
+(34, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 62315317),
+(35, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 62315454),
+(36, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 62312453),
+(37, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 62313872),
+(38, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 62314877);
 
 -- --------------------------------------------------------
 
@@ -126,7 +136,17 @@ CREATE TABLE `progress` (
 --
 
 INSERT INTO `progress` (`pg_id`, `pg_file_eng`, `pg_file_qe`, `pg_file_adviser`, `pg_file_outline`, `pg_file_end`, `pg_file_eng_time`, `pg_file_qe_time`, `pg_file_adviser_time`, `pg_file_outline_time`, `pg_file_end_time`, `pg_file_eng_admin_id`, `pg_file_qe_admin_id`, `pg_file_adviser_admin_id`, `pg_file_outline_admin_id`, `pg_file_end_admin_id`, `pg_student_id`) VALUES
-(18, 'uploads/TesT_CSIT02__071022041430.pdf', 'uploads/TesT_CSIT03__071022041438.pdf', NULL, NULL, NULL, '2022-10-07 14:14:30', '2022-10-07 14:14:38', NULL, NULL, NULL, 2, 2, NULL, NULL, NULL, 62313870);
+(18, 'uploads/TesT_CSIT02__071022041430.pdf', 'uploads/TesT_CSIT03__071022041438.pdf', NULL, NULL, NULL, '2022-10-07 14:14:30', '2022-10-07 14:14:38', NULL, NULL, NULL, 2, 2, NULL, NULL, NULL, 62313870),
+(19, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 62314693),
+(20, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 62313871),
+(21, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 62311371),
+(22, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 62314921),
+(23, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 62316062),
+(24, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 62315317),
+(25, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 62315454),
+(26, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 62312453),
+(27, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 62313872),
+(28, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 62314877);
 
 -- --------------------------------------------------------
 
@@ -152,7 +172,17 @@ CREATE TABLE `student` (
 --
 
 INSERT INTO `student` (`student_id`, `student_pic`, `student_user`, `student_password`, `prefix`, `first_name`, `last_name`, `email`, `section`, `student_teacher_id`) VALUES
-(62313870, 'pic/top__071022041320.jpg', '62313870', '13870', 'นาย', 'ภัทรดนัย', 'ชาบาง', 'pattaradanaic62@nu.ac.th', 'Information_Technology', 0);
+(62311371, 'pic/N__181022011201.jpg', '62311371', '11371', 'นาย', 'ชินกฤต', 'แถมพยัคฆ์', 'chinakritt62@nu.ac.th', 'เทคโนโลยีสารสนเทศ', 0),
+(62312453, 'pic/B__181022011953.jpg', '62312453', '12453', 'นาย', 'ธรณ์เทพ', 'หอมจันทร์', 'thontheph62@nu.ac.th', 'เทคโนโลยีสารสนเทศ', 0),
+(62313870, 'pic/top__071022041320.jpg', '62313870', '13870', 'นาย', 'ภัทรดนัย', 'ชาบาง', 'pattaradanaic62@nu.ac.th', 'เทคโนโลยีสารสนเทศ', 0),
+(62313871, 'pic/Untitled_Artwork__171022045416.png', '62313871', '13871', 'นาย', 'สมชาย', 'ดีดี', 'somc@nu.ac.th', 'วิทยาการคอมพิวเตอร์', 0),
+(62313872, 'pic/csit__181022012131.png', '62313872', '13872', 'นางสาว', 'สมหญิง', 'ดีมั้ย', 'somd@gmail.com', 'วิทยาการคอมพิวเตอร์', 0),
+(62314693, 'pic/1606469220520_polarr__171022040341.jpg', '62314693', '14693', 'นางสาว', 'วาสนา', 'เกตุชาวนา', 'wasanak62@nu.ac.th', 'เทคโนโลยีสารสนเทศ', 0),
+(62314877, 'pic/Poy__201022045841.jpg', '62314877', '14877', 'นางสาว', 'ศศินันท์', 'บุญมา', 'sasinanb62@nu.ac.th', 'เทคโนโลยีสารสนเทศ', 0),
+(62314921, 'pic/P__181022011416.jpg', '62314921', '14921', 'นาย', 'ศิรนพ', 'อยู่อ่ำ', 'siranopy62@nu.ac.th', 'วิทยาการคอมพิวเตอร์', 0),
+(62315317, 'pic/Deaw__181022011640.jpg', '62315317', '15317', 'นาย', 'สราวุฒิ', 'มั่นอ่วม', 'sarawutm62@nu.ac.th', 'วิทยาการคอมพิวเตอร์', 0),
+(62315454, 'pic/M__181022011755.jpg', '62315454', '15454', 'นาย', 'สิทธิโชค', 'ทองทับ', 'sittichokt62@nu.ac.th', 'เทคโนโลยีสารสนเทศ', 0),
+(62316062, 'pic/A__181022011500.jpg', '62316062', '16062', 'นาย', 'อรรถพร', 'หงษ์ทอง', 'autthapornh62@nu.ac.th', 'วิทยาการคอมพิวเตอร์', 0);
 
 -- --------------------------------------------------------
 
@@ -238,13 +268,13 @@ ALTER TABLE `chapter`
 -- AUTO_INCREMENT for table `gtcsit`
 --
 ALTER TABLE `gtcsit`
-  MODIFY `gt_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `gt_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT for table `progress`
 --
 ALTER TABLE `progress`
-  MODIFY `pg_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `pg_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `teachers`

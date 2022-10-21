@@ -27,7 +27,7 @@
             $email = $_POST['email'];
             $password = $_POST['password'];
 
-            $sql = "SELECT * FROM `admin` WHERE `admin_user` = '$email' AND `admin_password` = '$password'"; //user คือตารางที่เก็บ
+            $sql = "SELECT * FROM `admin` WHERE `admin_user` = '$email' AND `admin_password` = '$password'"; 
             $result = $conn->query($sql);
 
             if ($result->num_rows == 1) {
@@ -42,7 +42,7 @@
             $email = $_POST['email'];
             $password = $_POST['password'];
 
-            $sql = "SELECT * FROM `student` WHERE `student_user` = '$email' AND `student_password` = '$password'"; //user คือตารางที่เก็บ
+            $sql = "SELECT * FROM `student` WHERE `student_user` = '$email' AND `student_password` = '$password'"; 
             $result = $conn->query($sql);
 
             if ($result->num_rows == 1) {
@@ -57,7 +57,7 @@
             $email = $_POST['email'];
             $password = $_POST['password'];
 
-            $sql = "SELECT * FROM `teachers` WHERE `teachers_user` = '$email' AND `teachers_password` = '$password'"; //user คือตารางที่เก็บ
+            $sql = "SELECT * FROM `teachers` WHERE `teachers_user` = '$email' AND `teachers_password` = '$password'"; 
             $result = $conn->query($sql);
 
             if ($result->num_rows == 1) {
